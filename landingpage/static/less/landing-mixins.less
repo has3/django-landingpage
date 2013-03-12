@@ -1,0 +1,41 @@
+.colorBand(@color: #fff) {
+  background: @color 100%;
+  width: 100%;
+}
+
+.radialGradient(@start,@stop) {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-radial- gradient(center, ellipse farthest-corner, #D8C48F 0%, #ECE2C8 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-radial-gradient(center, ellipse farthest-corner, #D8C48F 0%, #ECE2C8 100%);
+
+	/* Opera */ 
+	background-image: -o-radial-gradient(center, ellipse farthest-corner, #D8C48F 0%, #ECE2C8 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(radial, center center, 0, center center, 497, color-stop(0, #D8C48F), color-stop(1, #ECE2C8));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #D8C48F 0%, #ECE2C8 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: radial-gradient(ellipse farthest-corner at center, #D8C48F 0%, #ECE2C8 100%);
+	}
+
+.h1style(@color: #3d2d29){
+	font-family: 'NewsCycleRegular', Helvertica, Sans-Serif;
+	font-size: 1.7em;
+	font-weight: bold;
+	display: inline-block;
+	color: @color 100%;
+}
+.h2style(@color: #e5d8b5){
+	font-family: 'NewsCycleRegular', Helvertica, Sans-Serif;
+	font-size: 2em;
+	color: @color;
+	display: inline-block;
+}
+.h3style{
+	font-family: 'NewsCycleRegular', Helvertica, Sans-Serif;	
+}
