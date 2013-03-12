@@ -103,12 +103,12 @@ def find_package_data(
     return out
 
 
-PACKAGE = ""
-NAME = ""
-DESCRIPTION = ""
-AUTHOR = ""
-AUTHOR_EMAIL = ""
-URL = ""
+PACKAGE = "landingpage"
+NAME = "django-landingpage"
+DESCRIPTION = "a landing page app for django"
+AUTHOR = "Julian Threatt"
+AUTHOR_EMAIL = "julian@ftwgroup.com"
+URL = "https://github.com/jthreatt4/django-landingpage"
 VERSION = __import__(PACKAGE).__version__
 
 
