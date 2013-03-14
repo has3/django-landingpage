@@ -25,6 +25,7 @@ class LandingPage(models.Model):
 class Pitch(models.Model):
     image = models.ImageField(upload_to="images/pitch")
     snippet = models.CharField(max_length=255)
+    snippet_heading = models.CharField(max_length=255)
     description = models.TextField()
 
     def __unicode__(self):
