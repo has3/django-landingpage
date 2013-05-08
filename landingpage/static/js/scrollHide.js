@@ -5,7 +5,6 @@ $('document').ready(function(){
 });
 $('.close-btn').click(function(){
     $('.greenBox').hide();
-    console.log($(this).parent().parent());
     parentElem = $(this).parent().parent().parent();
     $(parentElem).find('.greenBox').show();
 });

@@ -37,7 +37,9 @@
         </div>
         <div id="tickets-signup" class="span8 offset2 greenBox">
             <h1>REQUEST INFO</h1>
-            {% crispy form %}
+            <form id="point-{{ landing_page.point1.id }}" action="." method="post">
+                {% crispy form %}
+            </form>
             <h6>We promise to never sell your email address to any 3rd party or send you nasty spam.</h6>
         </div>
 
@@ -54,7 +56,9 @@
         </div>
         <div id="donors-signup" class="span8 offset2 greenBox">
             <h1>REQUEST INFO</h1>
-            {% crispy form %}
+            <form id="point-{{ landing_page.point2.id }}" action="." method="post">
+                {% crispy form %}
+            </form>
             <h6>We promise to never sell your email address to any 3rd party or send you nasty spam.</h6>
         </div>
 
@@ -70,7 +74,9 @@
         </div>
         <div id="graph-signup" class="span8 offset2 greenBox">
             <h1>REQUEST INFO</h1>
-            {% crispy form %}
+            <form id="point-{{ landing_page.point3.id }}" action="." method="post">
+                {% crispy form %}
+            </form>
             <h6>We promise to never sell your email address to any 3rd party or send you nasty spam.</h6>
 
         </div>

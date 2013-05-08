@@ -10,8 +10,9 @@ class SignUpForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         self.helper = FormHelper()
-        self.helper.form_method = 'post'
-        self.helper.form_action = '.'
+        self.helper.form_tag = False
+        #self.helper.form_method = 'post'
+        #self.helper.form_action = '.'
         self.helper.layout = Layout(
             Field('name', placeholder='Name', css_class='span10', template='landingpage/no-label.html'),
             Field('organization', placeholder='Organization', css_class='span10', template='landingpage/no-label.html'),

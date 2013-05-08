@@ -23,6 +23,21 @@
     {% block extra_css %}
     {% endblock %}
 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40100235-1', 'ftwsuite.com');
+  ga('send', 'pageview');
+  </script>
+
+<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("ce76f93fae77b22a6c5f0a54c2d5f315");</script><!-- end Mixpanel -->
+
 </head>
 <body>
   <div id="fb-root"></div>
@@ -48,7 +63,6 @@
           {% block tagline %}
           {% endblock %}
 
-
       </div>
 
     </div>
@@ -69,6 +83,34 @@
     
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}js/scrollHide.js"></script>
+  <script type="text/javascript">
+      // register all the forms for submission
+      $('input[name=submit]').click(function(event) {
+          event.preventDefault();
+          var form = $(this).parent();
+          mixpanel.track("Contact Form Submission", {point: this.id});
+          setTimeout(function(){
+              $(form).submit();
+          }, 400);
+//          event.preventDefault();
+      });
+
+      $('#cta').click(function(event) {
+          console.log("Primary Call to Action");
+          mixpanel.track('Primary Call to Action');
+      });
+
+      $('#leftCol').click(function() {
+          mixpanel.track('Right Pitch');
+      });
+      $('#centerCol').click(function( ){
+          mixpanel.track('Center Pitch');
+      });
+      $('#rightCol').click(function() {
+          mixpanel.track('Right Pitch');
+      });
+
+  </script>
 {% block extra_js %}
 {% endblock %}
 </body>
