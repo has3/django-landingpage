@@ -35,7 +35,7 @@
                 <button class="btn close-btn">Request More Info &raquo;</button>
             </div>
         </div>
-        <div id="tickets-signup" class="span8 offset2 greenBox">
+        <div id="tickets-signup" class="span6 offset2 greenBox">
             <h1>REQUEST INFO</h1>
             <form id="point-{{ landing_page.point1.id }}" action="." method="post">
                 {% crispy form %}
@@ -54,7 +54,7 @@
                 <button class="btn close-btn">Request More Info &raquo;</button>
             </div>
         </div>
-        <div id="donors-signup" class="span8 offset2 greenBox">
+        <div id="donors-signup" class="span6 offset2 greenBox">
             <h1>REQUEST INFO</h1>
             <form id="point-{{ landing_page.point2.id }}" action="." method="post">
                 {% crispy form %}
@@ -69,10 +69,10 @@
             <div id="graph" class="bullets">
                 {{ landing_page.point3.description|safe }}
 
-                <button class="btn close-btn">Request More Info &raquo;</button>
+                <button class="btn close-btn" data-mixpanel="click" data-object-name="botton tracking">Request More Info &raquo;</button>
             </div>
         </div>
-        <div id="graph-signup" class="span8 offset2 greenBox">
+        <div id="graph-signup" class="span6 offset2 greenBox">
             <h1>REQUEST INFO</h1>
             <form id="point-{{ landing_page.point3.id }}" action="." method="post">
                 {% crispy form %}

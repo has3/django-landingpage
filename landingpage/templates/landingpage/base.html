@@ -81,7 +81,9 @@ mixpanel.init("ce76f93fae77b22a6c5f0a54c2d5f315");</script><!-- end Mixpanel -->
   {% include "landingpage/footer.html" %}
   </div>
     
-<script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script>
+{# <script type="text/javascript" src="{{STATIC_URL}}js/jquery.min.js"></script> #}
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}js/scrollHide.js"></script>
   <script type="text/javascript">
       // register all the forms for submission
@@ -109,7 +111,16 @@ mixpanel.init("ce76f93fae77b22a6c5f0a54c2d5f315");</script><!-- end Mixpanel -->
       $('#rightCol').click(function() {
           mixpanel.track('Right Pitch');
       });
-
+      $('a,button,input-submit').filter(function(){
+          return $(this).data('mixpanel') === 'click';
+      }).each(function(){
+        var $this = $(this),
+            msg = $this.data('objectName');
+          $this.click(function(){
+            console.log('test click');
+            mixpanel.track(msg);
+          });
+      });
   </script>
 {% block extra_js %}
 {% endblock %}
